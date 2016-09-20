@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="projectsApp">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Projects Page">
+    <meta name="keywords" content="Matthias,Balota,Matthias Balota,Projects,HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Matthias Balota">
+
+    <meta name="theme-color" content="#222">
+    <meta name="msapplication-navbutton-color" content="#222">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/new-favicon.ico">
+
+    <title>Projects of Matthias Balota</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/baloo.min.css">
+
+  </head>
+  <body ng-controller="ProjectsController">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 header">
+          <img src="img/profile.jpg" alt="profile picture" class="img-circle" />
+          <h3>Projects<small><a href="http://balota.me" target="_blank">balota.me</a> © Matthias Balota</small></h3>
+        </div>
+        <h1 class="col-xs-12 project-wrapper-begin">Active Projects</h1>
+        <div class="col-xs-12 project-wrapper">
+        <div class="span">
+        <div class="row">
+          <div ng-repeat="project in ActiveProjects" class="col-xs-12">
+            <div class="project">
+              <h3>{{project.title}}</h3>
+              <img class="img-responsive contrast" src={{project.images[0].src}} alt={{project.images[0].alt}} />
+
+              <div class="description">
+                <p ng-bind-html="project.description"></p>
+              </div>
+              <div class="links">
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                  <div ng-repeat="link in project.links" class="btn-group" role="group">
+                    <a class="btn btn-custom" href={{link.url}} target="{{link.target}}">{{link.display}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-xs-12 project-wrapper-end"></div>
+      </div>
+      <div class="row">
+        <h1 class="col-xs-12 project-wrapper-begin">Finished Projects</h1>
+        <div class="col-xs-12 project-wrapper">
+        <div class="span">
+        <div class="row">
+          <div ng-repeat="project in FinishedProjects" class="col-xs-12">
+            <div class="project">
+              <h3>{{project.title}}</h3>
+              <img class="img-responsive" src={{project.images[0].src}} alt={{project.images[0].alt}} />
+
+              <div class="description">
+                <p ng-bind-html="project.description"></p>
+              </div>
+              <div class="links">
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                  <div ng-repeat="link in project.links" class="btn-group" role="group">
+                    <a class="btn btn-custom" href={{link.url}} target="_blank">{{link.display}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-xs-12 project-wrapper-end"></div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/angular.min.js" charset="utf-8"></script>
+    <script src="js/angular-sanitize.min.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </body>
+</html>
