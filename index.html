@@ -26,59 +26,63 @@
           <img src="img/profile.jpg" alt="profile picture" class="img-circle" />
           <h3>Projects<small><a href="http://balota.me" target="_blank">balota.me</a> © Matthias Balota</small></h3>
         </div>
-        <h1 class="col-xs-12 project-wrapper-begin">Active Projects</h1>
-        <div class="col-xs-12 project-wrapper">
-        <div class="span">
-        <div class="row">
-          <div ng-repeat="project in ActiveProjects" class="col-xs-12">
-            <div class="project">
-              <h3>{{project.title}}</h3>
-              <img class="img-responsive contrast" src={{project.images[0].src}} alt={{project.images[0].alt}} />
+        <div class="col-xs-12 body span">
+          <div class="row">
+            <h1 class="col-xs-12 project-wrapper-begin">Active Projects</h1>
+            <div class="col-xs-12 project-wrapper">
+            <div class="span">
+            <div class="row">
+              <div ng-repeat="project in ActiveProjects" class="col-xs-12">
+                <div class="project">
+                  <h3>{{project.title}}</h3>
+                  <img class="img-responsive contrast" src={{project.images[0].src}} alt={{project.images[0].alt}} />
 
-              <div class="description">
-                <p ng-bind-html="project.description"></p>
-              </div>
-              <div class="links">
-                <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                  <div ng-repeat="link in project.links" class="btn-group" role="group">
-                    <a class="btn btn-custom" href={{link.url}} target="{{link.target}}">{{link.display}}</a>
+                  <div class="description">
+                    <p ng-bind-html="project.description"></p>
+                  </div>
+                  <div class="links">
+                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                      <div ng-repeat="link in project.links" class="btn-group" role="group">
+                        <a class="btn btn-custom" href={{link.url}} target="{{link.target}}">{{link.display}}</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            </div>
+            </div>
+            <div class="col-xs-12 project-wrapper-end"></div>
           </div>
-        </div>
-        </div>
-        </div>
-        <div class="col-xs-12 project-wrapper-end"></div>
-      </div>
-      <div class="row">
-        <h1 class="col-xs-12 project-wrapper-begin">Finished Projects</h1>
-        <div class="col-xs-12 project-wrapper">
-        <div class="span">
-        <div class="row">
-          <div ng-repeat="project in FinishedProjects" class="col-xs-12">
-            <div class="project">
-              <h3>{{project.title}}</h3>
-              <img class="img-responsive" src={{project.images[0].src}} alt={{project.images[0].alt}} />
+          <div class="row">
+            <h1 class="col-xs-12 project-wrapper-begin">Finished Projects</h1>
+            <div class="col-xs-12 project-wrapper">
+            <div class="span">
+            <div class="row">
+              <div ng-repeat="project in FinishedProjects" class="col-xs-12">
+                <div class="project">
+                  <h3>{{project.title}}</h3>
+                  <img class="img-responsive" src={{project.images[0].src}} alt={{project.images[0].alt}} />
 
-              <div class="description">
-                <p ng-bind-html="project.description"></p>
-              </div>
-              <div class="links">
-                <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                  <div ng-repeat="link in project.links" class="btn-group" role="group">
-                    <a class="btn btn-custom" href={{link.url}} target="_blank">{{link.display}}</a>
+                  <div class="description">
+                    <p ng-bind-html="project.description"></p>
+                  </div>
+                  <div class="links">
+                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                      <div ng-repeat="link in project.links" class="btn-group" role="group">
+                        <a class="btn btn-custom" href={{link.url}} target="_blank">{{link.display}}</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            </div>
+            </div>
+            <div class="col-xs-12 project-wrapper-end"></div>
+          </div>
           </div>
         </div>
-        </div>
-        </div>
-        <div class="col-xs-12 project-wrapper-end"></div>
-      </div>
     </div>
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/bootstrap.min.js" charset="utf-8"></script>
